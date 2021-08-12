@@ -34,7 +34,7 @@ These restrictions & lacks of Terraform resource may be improved in the future, 
 ## Getting Started <a name = "getting_started"></a>
 
 1. [Deploy shared monitoring service resources](./terraform/shared/)
-2. [Deploy monitoring targe resources](./terraform/vm/)
+2. [Deploy monitoring target resources](./terraform/vm/)
 
 ### Prerequisites & Tested
 
