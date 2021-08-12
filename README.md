@@ -17,7 +17,7 @@ With this sample, you can mainly experience the following:
 * Deploy sample monitoring target (VM)
 * Install AMA extention to VM
 * Generate & deploy Data Colletion Rules (VM guest OS performance counters and Syslog)
-* Associate Data Collection Rules to Azure Monitor Metrics & Log Analytics workspace
+* Associate Data Collection Rules to VM
 * Setup Alert Rules
   * VM host metric (CPU usage)
   * VM guest metric (Disk free space)
