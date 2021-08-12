@@ -7,7 +7,7 @@
 
 ## About <a name = "about"></a>
 
-Azure Monitor Agent(AMA) is now [generally available](https://azure.microsoft.com/ja-jp/updates/azure-monitor-agent-and-data-collection-rules-now-generally-available/), but there isn't much information to use at this time. This repository contains Terraform HCL sample codes for AMA. Please refer to the transition period.
+Azure Monitor Agent(AMA) is now [generally available](https://azure.microsoft.com/ja-jp/updates/azure-monitor-agent-and-data-collection-rules-now-generally-available/), but there isn't much information to use at this time. This repository contains Terraform HCL sample codes for AMA. Please use it as a sample in the transition period.
 
 <img src="https://github.com/ToruMakabe/az-ama-tf-sample/blob/main/images/ama-tf-sample.png?raw=true" width="800">
 
