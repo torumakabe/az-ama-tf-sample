@@ -156,6 +156,7 @@ resource "azurerm_virtual_machine_extension" "ama" {
 SETTINGS
 }
 
+// Solution until DCR association is supported. Related to https://github.com/hashicorp/terraform-provider-azurerm/issues/9679
 resource "null_resource" "associate_data_collection_rule" {
   count = local.vm_count
   provisioner "local-exec" {

@@ -33,6 +33,7 @@ resource "azurerm_log_analytics_workspace" "ama_sample" {
   }
 }
 
+// Solution until DCR is supported https://github.com/hashicorp/terraform-provider-azurerm/issues/9679
 data "template_file" "data_collection_rule" {
   template = file("./data-collection-rule.json.tpl")
 
