@@ -25,7 +25,7 @@ With this sample, you can mainly experience the following:
 
 ### Note
 
-The sample codes have some worksrouds such as managing Data Collection Rules with templates & Azure CLI.
+The sample codes have some workarouds such as managing Data Collection Rules with templates & Azure CLI.
 
 > [Support for Azure Monitor Data Collection Rules](https://github.com/hashicorp/terraform-provider-azurerm/issues/9679)
 
