@@ -89,10 +89,6 @@ resource "azurerm_network_interface_security_group_association" "nic_ssh" {
   network_security_group_id = azurerm_network_security_group.ssh.id
 }
 
-data "template_file" "init_script" {
-  template = file("./init.sh")
-}
-
 resource "azurerm_linux_virtual_machine" "ama_sample_vm" {
   count = local.vm_count
   # Workaround https://github.com/hashicorp/terraform/issues/24663
@@ -136,7 +132,7 @@ resource "azurerm_linux_virtual_machine" "ama_sample_vm" {
     version   = "latest"
   }
 
-  custom_data = base64encode(data.template_file.init_script.rendered)
+  custom_data = filebase64("./init.sh")
 }
 
 resource "azurerm_virtual_machine_extension" "ama" {

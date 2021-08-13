@@ -34,29 +34,14 @@ resource "azurerm_log_analytics_workspace" "ama_sample" {
 }
 
 // Solution until DCR is supported https://github.com/hashicorp/terraform-provider-azurerm/issues/9679
-data "template_file" "data_collection_rule" {
-  template = file("./data-collection-rule.json.tpl")
-
-  vars = {
-    location                            = local.ama_sample_shared_location
-    log_analytics_workspace_resource_id = azurerm_log_analytics_workspace.ama_sample.id
-    syslog_facility_names               = jsonencode(var.syslog_facilities_names)
-    syslog_levels                       = jsonencode(var.syslog_levels)
-  }
-}
-
 resource "null_resource" "deploy_data_collection_rule" {
   provisioner "local-exec" {
     command = <<EOT
       az rest --subscription ${data.azurerm_client_config.current.subscription_id} \
               --method PUT \
               --url https://management.azure.com/subscriptions/${data.azurerm_client_config.current.subscription_id}/resourceGroups/${azurerm_resource_group.ama_sample_shared.name}/providers/Microsoft.Insights/dataCollectionRules/${local.dcr_name}?api-version=2019-11-01-preview \
-              --body '${data.template_file.data_collection_rule.rendered}'
+              --body '${local.data_collection_rule}'
 EOT
-  }
-
-  triggers = {
-    data = md5(data.template_file.data_collection_rule.rendered)
   }
 }
 
