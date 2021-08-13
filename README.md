@@ -41,3 +41,5 @@ These restrictions & lacks of Terraform resource may be improved in the future, 
 * Terraform: 1.0.4
   * hashicorp/azurerm: 2.71
   * on Linux (need local-exec shell provisioner)
+* Azure CLI: 2.27.1
+  * monitor-control-service extension: 0.2.0
